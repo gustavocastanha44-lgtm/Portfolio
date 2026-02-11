@@ -3,247 +3,349 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gustavo Santos | Portfólio</title>
+<title>Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-html{
-scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#070d18;color:#e5e7eb}
 
-body{
-margin:0;
-font-family: 'Segoe UI', Arial, sans-serif;
-background:linear-gradient(180deg,#020617,#071a3a,#0b2c6b,#0ea5e9);
-color:white;
-}
-
-/* MENU */
+/* NAV */
 nav{
 position:fixed;
 top:0;
 width:100%;
-padding:18px;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:999;
+border-bottom:1px solid rgba(255,255,255,0.05)
+}
+.logo{color:#22d3ee;font-weight:700;font-size:22px}
+nav a{
+color:#94a3b8;
+text-decoration:none;
+margin-left:30px;
+font-weight:500;
+transition:.3s;
+}
+nav a:hover{color:#22d3ee}
+
+/* HERO */
+header{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
 text-align:center;
-background:rgba(2,6,23,0.85);
-backdrop-filter: blur(6px);
-z-index:1000;
+background:radial-gradient(circle at center,#0b1c2c 0%,#05070d 70%);
+padding:0 20px
 }
 
-nav a{
-color:white;
-margin:0 25px;
-text-decoration:none;
+header h4{color:#22d3ee;margin-bottom:10px}
+header h1{
+font-size:64px;
+font-weight:700;
+margin-bottom:10px
+}
+header h2{
+font-size:28px;
+color:#94a3b8;
+margin-bottom:20px
+}
+header p{
+max-width:600px;
+color:#94a3b8;
+margin-bottom:35px
+}
+
+.btns{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+.btn{
+padding:14px 28px;
+border-radius:10px;
+border:none;
 font-weight:600;
-font-size:18px;
+cursor:pointer;
+font-size:16px;
 transition:.3s;
 }
 
-nav a:hover{
-color:#38bdf8;
+.btn-primary{
+background:#22d3ee;
+color:#000;
+}
+.btn-primary:hover{background:#06b6d4}
+
+.btn-outline{
+background:transparent;
+border:1px solid #334155;
+color:#e5e7eb;
+}
+.btn-outline:hover{
+border-color:#22d3ee;
+color:#22d3ee
 }
 
 /* SEÇÕES */
-section{
-min-height:100vh;
-padding:120px 40px 80px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+section{padding:110px 8%}
+.title{
 text-align:center;
-animation:fadeUp 1s ease;
+margin-bottom:60px;
+}
+.title h2{
+font-size:40px;
+margin-bottom:10px
+}
+.title span{color:#22d3ee}
+.title p{color:#94a3b8}
+
+/* SOBRE CARDS */
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+margin-top:40px;
 }
 
-@keyframes fadeUp{
-from{opacity:0; transform:translateY(40px);}
-to{opacity:1; transform:translateY(0);}
-}
-
-/* FOTO PERFIL */
-.foto{
-width:190px;
-height:190px;
-border-radius:50%;
-overflow:hidden;
-border:4px solid #38bdf8;
-box-shadow:0 0 40px rgba(56,189,248,0.7);
-margin-bottom:25px;
-}
-
-.foto img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-/* TEXTOS */
-h1{
-font-size:48px;
-margin:10px 0;
-}
-
-.sub{
-font-size:22px;
-color:#7dd3fc;
-margin-bottom:20px;
-}
-
-.btn{
-margin-top:25px;
-padding:14px 28px;
-border:none;
-border-radius:12px;
-background:linear-gradient(90deg,#2563eb,#38bdf8);
-color:white;
-font-size:18px;
-cursor:pointer;
+.skill-card{
+background:#0b1220;
+padding:30px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.05);
 transition:.3s;
-text-decoration:none;
+}
+.skill-card:hover{
+transform:translateY(-8px);
+border:1px solid #22d3ee44;
 }
 
-.btn:hover{
-transform:scale(1.05);
-box-shadow:0 0 20px #38bdf8;
+.bar{
+height:8px;
+background:#1e293b;
+border-radius:10px;
+margin-top:15px;
+overflow:hidden;
+}
+.fill{
+height:100%;
+background:#22d3ee;
 }
 
 /* PROJETOS */
-.cards{
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+.project{
+background:#0b1220;
+border-radius:16px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.05);
+transition:.3s;
+}
+.project:hover{
+transform:translateY(-8px);
+border:1px solid #22d3ee44;
+}
+.project-top{
+height:120px;
+background:#111827;
 display:flex;
-flex-wrap:wrap;
-gap:40px;
+align-items:center;
 justify-content:center;
-margin-top:40px;
+font-size:40px;
+}
+.project-content{padding:25px}
+.tags span{
+background:#111827;
+padding:6px 12px;
+border-radius:20px;
+font-size:12px;
+margin-right:6px;
+color:#94a3b8
 }
 
-.card{
-background:rgba(15,23,42,0.65);
-backdrop-filter: blur(8px);
-border-radius:18px;
-padding:20px;
-width:300px;
-box-shadow:0 0 25px rgba(56,189,248,0.15);
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 0 35px rgba(56,189,248,0.7);
-}
-
-.card img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:15px;
-border:2px solid #38bdf8;
-}
-
-.card h3{
-margin:10px 0;
-}
-
-.card p{
-font-size:15px;
-opacity:.9;
-}
-
-.card a{
-display:inline-block;
-margin-top:15px;
-padding:10px 20px;
-background:#38bdf8;
-color:black;
-text-decoration:none;
-border-radius:8px;
-font-weight:bold;
-}
-
-/* SOBRE */
-#sobre{
-max-width:800px;
+/* CONTATO */
+.contato{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+max-width:900px;
 margin:auto;
 }
+input,textarea{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+background:#0b1220;
+border:1px solid #1e293b;
+border-radius:10px;
+color:#fff;
+}
+textarea{height:130px}
 
-/* FOOTER */
 footer{
-padding:30px;
 text-align:center;
-background:#020617;
-margin-top:40px;
+padding:40px;
+color:#64748b;
+border-top:1px solid rgba(255,255,255,0.05)
 }
 
+/* RESPONSIVO */
+@media(max-width:800px){
+header h1{font-size:40px}
+.contato{grid-template-columns:1fr}
+nav{padding:18px 5%}
+section{padding:100px 5%}
+}
 </style>
 </head>
 
 <body>
 
-<!-- MENU -->
 <nav>
-<a href="#home">Início</a>
-<a href="#projetos">Projetos</a>
+<div class="logo">Data</div>
+<div>
+<a href="#inicio">Início</a>
 <a href="#sobre">Sobre</a>
+<a href="#projetos">Projetos</a>
+<a href="#contato">Contato</a>
+</div>
 </nav>
 
-<!-- HOME -->
-<section id="home">
+<header id="inicio">
+<h4>OLÁ, EU SOU</h4>
+<h1>Gustavo Castanha</h1>
+<h2>Análise de Dados</h2>
+<p>Transformo dados em insights estratégicos. Experiência em Excel, Python, SQL e Power BI criando dashboards e automações.</p>
 
-<div class="foto">
-<img src="SUA_FOTO.jpg">
+<div class="btns">
+<a href="#projetos"><button class="btn btn-primary">Ver Projetos</button></a>
+<a href="#contato"><button class="btn btn-outline">Entre em Contato</button></a>
 </div>
+</header>
 
-<h1>Gustavo Santos</h1>
-<p class="sub">Dados | Python | Power BI | Excel | SQL</p>
-
-<a href="#projetos" class="btn">Ver Projetos</a>
-
-</section>
-
-<!-- PROJETOS -->
-<section id="projetos">
-
-<h1>Projetos em Destaque</h1>
-
-<div class="cards">
-
-<div class="card">
-<img src="PROJETO1.jpg">
-<h3>Dashboard Power BI</h3>
-<p>Indicadores ambientais e análise de resíduos industriais.</p>
-<a href="LINK1" target="_blank">Ver projeto</a>
-</div>
-
-<div class="card">
-<img src="PROJETO2.jpg">
-<h3>Análise em Python</h3>
-<p>Automação e tratamento de dados industriais.</p>
-<a href="LINK2" target="_blank">Ver projeto</a>
-</div>
-
-<div class="card">
-<img src="PROJETO3.jpg">
-<h3>Excel Inteligente</h3>
-<p>Dashboards e automações avançadas em Excel.</p>
-<a href="LINK3" target="_blank">Ver projeto</a>
-</div>
-
-</div>
-</section>
-
-<!-- SOBRE -->
 <section id="sobre">
-<h1>Sobre mim</h1>
+<div class="title">
+<h2>Sobre <span>Mim</span></h2>
+<p>Profissional focado em dados, automação e eficiência de processos.</p>
+</div>
 
-<p>
-Profissional com experiência na área ambiental migrando para tecnologia e análise de dados.  
-Atuo com Excel avançado, Power BI e Python aplicados a dados industriais e indicadores.  
-Busco oportunidade na área de dados ou TI para desenvolver soluções e gerar valor com análise.
-</p>
+<div class="skills">
+<div class="skill-card">
+<h3>Excel</h3>
+<p>Dashboards, VBA, Power Query</p>
+<div class="bar"><div class="fill" style="width:90%"></div></div>
+</div>
 
+<div class="skill-card">
+<h3>Python</h3>
+<p>Automação, Análise de dados</p>
+<div class="bar"><div class="fill" style="width:90%"></div></div>
+</div>
+
+<div class="skill-card">
+<h3>Power BI</h3>
+<p>Modelagem e Dashboards</p>
+<div class="bar"><div class="fill" style="width:90%"></div></div>
+</div>
+</div>
 </section>
+
+<section id="projetos">
+<div class="title">
+<h2>Meus <span>Projetos</span></h2>
+</div>
+
+<div class="projects">
+
+<a href="https://github.com/SEU-USUARIO/dashboard-producao" target="_blank" style="text-decoration:none;color:inherit;">
+<div class="project">
+<div class="project-top">📊</div>
+<div class="project-content">
+<h3>Dashboard Produção</h3>
+<p>Indicadores e eficiência produtiva em tempo real.</p>
+<div class="tags">
+<span>Power BI</span><span>Excel</span>
+</div>
+</div>
+</div>
+</a>
+
+<a href="https://github.com/SEU-USUARIO/automacao-relatorios" target="_blank" style="text-decoration:none;color:inherit;">
+<div class="project">
+<div class="project-top">⚙️</div>
+<div class="project-content">
+<h3>Automação Relatórios</h3>
+<p>Relatórios automáticos com Python e Excel.</p>
+<div class="tags">
+<span>Python</span><span>VBA</span>
+</div>
+</div>
+</div>
+</a>
+
+<a href="https://github.com/SEU-USUARIO/analise-dados" target="_blank" style="text-decoration:none;color:inherit;">
+<div class="project">
+<div class="project-top">📈</div>
+<div class="project-content">
+<h3>Análise de Dados</h3>
+<p>Estudos e insights estratégicos.</p>
+<div class="tags">
+<span>SQL</span><span>BI</span>
+</div>
+</div>
+</div>
+</a>
+
+</div>
+</section>
+
+<section id="contato">
+<div class="title">
+<h2>Entre em <span>Contato</span></h2>
+</div>
+
+<div class="contato">
+
+<!-- FORM LADO ESQUERDO -->
+<form action="https://formsubmit.co/gustavocastanha44@gmail.com" method="POST">
+
+<input type="text" name="nome" placeholder="Seu nome" required>
+<input type="email" name="email" placeholder="Seu email" required>
+<textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="Mensagem do Portfólio">
+
+<button class="btn btn-primary" style="width:100%">Enviar mensagem</button>
+
+</form>
+
+<!-- INFO LADO DIREITO -->
+<div>
+<p>Email: gustavocastanha44@gmail.com</p>
+<p>GitHub: github.com/seu</p>
+</div>
+
+</div>
+</section>
+
 
 <footer>
-© 2026 - Gustavo Santos | Portfólio de Dados
+© 2026 Gustavo Castanha
 </footer>
 
 </body>
